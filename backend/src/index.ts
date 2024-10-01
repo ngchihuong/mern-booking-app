@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import userRoutes from "./routes/users"
 import authRoutes from "./routes/auth"
 import myHotelroutes from "./routes/my-hotels"
+import hotelsRoutes from "./routes/hotels";
 import cookieParser from "cookie-parser"
 import path from "path";
 import { v2 as cloudinary } from "cloudinary";
@@ -35,6 +36,8 @@ app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 app.use("/api/auth", authRoutes)
 app.use("/api/users", userRoutes)
 app.use("/api/my-hotels", myHotelroutes)
+app.use("/api/hotels", hotelsRoutes)
+
 app.get("*", (req: Request, res: Response) => {
     res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
 })

@@ -25,3 +25,6 @@ export const hotelFacilities = [
     "Spa",
     "Fitness Center",
 ]
+export const maxPrice = [
+    50, 100, 200, 300, 500
+]
